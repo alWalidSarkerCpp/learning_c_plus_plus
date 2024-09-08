@@ -15,9 +15,9 @@ vector<vector<int> > logic(int number){
             } else {
                 // Calculate other values using the previous row
                 pascal[i][j] = pascal[i - 1][j - 1] + pascal[i - 1][j];
-            }
         }
     }
+}
 
     return pascal;
 }

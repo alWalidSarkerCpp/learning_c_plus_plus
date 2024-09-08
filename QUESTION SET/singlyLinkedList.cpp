@@ -20,7 +20,7 @@ void alternativeElementsAlgorithm(Node* head) {
         delete temp;
         current_node = current_node->pointer;
     }
-}
+};
 
 //deleteDuplicatesReturnSorted
 void deleteSortedDuplicatesReturnSorted(Node* head){
@@ -45,7 +45,7 @@ void traversingReversedOrder(Node* head){
 //revsersing a linked list
 Node* reversingLinkedList(Node* head){
     Node* current = head;
-    Node* previous = NULL;
+    Node* previous  = NULL;
     while(current!=NULL){
         Node* next = current->pointer;
         current->pointer = previous;
@@ -56,9 +56,10 @@ Node* reversingLinkedList(Node* head){
     return node;
 }
 
+// reversing linked list kth time: 
 Node* reversedLinkedListKthTime(Node* head, int steps){
     
-}
+};
 
 //insert element at the tail
 void push_back(Node* head, int value){

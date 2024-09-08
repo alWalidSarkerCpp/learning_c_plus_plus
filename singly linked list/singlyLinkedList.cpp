@@ -56,7 +56,7 @@ void updatePerticularValue(Node* head,int value, int position){
 void deleteTheStartingElement(Node* &head){
     Node* temp = head;
     head = head->pointer;
-    free(temp);
+    delete temp;
 }
 
 //delete kth element
@@ -69,7 +69,7 @@ void deletePerticularElement(Node* head, int position){
     }
     Node* temp = previous->pointer;
     previous->pointer = previous->pointer->pointer;
-    free(temp);
+    delete (temp);
 }
 
 //delete a last elemet
@@ -80,7 +80,7 @@ void deleteLastElement(Node* head){
     }
     Node* temp = secondLastNode->pointer;
     secondLastNode->pointer = NULL;
-    free(temp);
+    delete (temp);
 }
 
 //use this method to print all the elements
