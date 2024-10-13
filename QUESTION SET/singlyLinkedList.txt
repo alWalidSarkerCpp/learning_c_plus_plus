@@ -8,3 +8,17 @@
 5. reverse the linked list kth time and return it 
    example : 1 2 3 4 5 is k is 2
              2 1 4 3 5
+6. given 2 linked lists, tell wheather they are equal or not, they will be only equal if the values are
+   same in the same node position
+   example : 1 2 3
+             1 2 3 
+             ans : true
+             1 2 3 3
+             1 3 2 2 
+             ans : false
+             1 2 3 4
+             1 2 
+             ans : false
+7. given the heads of 2 linked lists head1 and head2, return the node at which the two linked list
+   intersects. if there is no head is found return NULL;
+8. given the head of a linked list, remove the k-th node from the end of the list and returns its head.

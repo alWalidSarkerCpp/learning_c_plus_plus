@@ -95,7 +95,7 @@ void printNodeElements(Node* head){
 int main(){
     Node *userMadeLinkedList = new Node(2);
     insertAtHead(userMadeLinkedList,1);
-    deletePerticularElement(userMadeLinkedList,1);
+    deleteLastElement(userMadeLinkedList);
     printNodeElements(userMadeLinkedList);
     return 0;
 };

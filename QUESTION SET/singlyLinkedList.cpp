@@ -56,10 +56,50 @@ Node* reversingLinkedList(Node* head){
     return node;
 }
 
-// reversing linked list kth time: 
-Node* reversedLinkedListKthTime(Node* head, int steps){
-    
+// reversing linked list kth steps: 
+Node* reversedLinkedListKthSteps(Node* head, int steps){
+    return head;
+    //skipped
 };
+
+bool nodeSameOrNot(Node* node1,Node* node2){
+    Node* n1 = node1;
+    Node* n2 = node2;
+    while(n1!=NULL && n2!=NULL){
+        if(n1->number != n2->number){
+            return false;
+        }
+        n1 = n1->pointer;
+        n2 = n2->pointer;
+    }
+    return (n1==NULL && n2==NULL);
+}
+
+Node* intersects(Node* head1, Node* head2){
+    Node* h1 = head1;
+    Node* h2 = head2;
+    while(h1 != NULL && h2 != NULL){
+        if(h1->number==h2->number){
+            return h1;
+        };
+        h1 = h1->pointer;
+        h2 = h2->pointer;
+    }
+    return NULL;
+}
+
+Node* lastKthRemove(Node* &head, int k){
+    Node* temp = head;
+    Node* previous = nullptr;
+    while(temp != nullptr){
+        Node* curr = temp;
+        curr->pointer = previous;
+        previous = temp;
+        temp = temp->pointer;
+    }
+    head = temp;
+    return head;
+}
 
 //insert element at the tail
 void push_back(Node* head, int value){
@@ -82,18 +122,7 @@ void print(Node* head){
 int main(){
     Node* userLinkedList = new Node(1);
     push_back(userLinkedList,2);
-    push_back(userLinkedList,2);
-    push_back(userLinkedList,2);
     push_back(userLinkedList,3);
-    push_back(userLinkedList,3);
-    push_back(userLinkedList,4);
-    push_back(userLinkedList,4);
-    push_back(userLinkedList,4);
-    push_back(userLinkedList,5);
-    push_back(userLinkedList,5);
-    push_back(userLinkedList,5);
-    push_back(userLinkedList,5);
-    Node* reversedUserLinkedList = reversingLinkedList(userLinkedList); // too much important
-    print(reversedUserLinkedList);
+    print(lastKthRemove(userLinkedList,2));
     return 0;
 }
